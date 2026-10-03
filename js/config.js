@@ -15,7 +15,7 @@ export default {
     { field: "file", dir: "asc" },
     { field: "page", dir: "asc" }
   ],
-  pageSize: 10,
+  pageSize: 30,
 
   labels: {
     appTitle: "Paperview",      // browser tab title
