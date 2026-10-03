@@ -19,7 +19,7 @@ export default {
 
   labels: {
     appTitle: "Paperview",      // browser tab title
-    searchPlaceholder: "Search by file name or keyword…",   // e.g. "Search PO number or file name…"
+    searchPlaceholder: "Search for PO number or file name...",   // e.g. "Search PO number or file name…"
     extra: "Keywords"           // reserved: not shown in v1 results
   }
 };
