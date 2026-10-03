@@ -1,1 +1,73 @@
-hello world
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Paperview</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <main id="screen" class="screen">
+    <div class="screen-card">
+      <h1 id="screen-title" class="screen-title">Paperview</h1>
+      <p id="screen-body" class="screen-body">Starting…</p>
+      <p id="screen-error" class="screen-error" role="alert" hidden></p>
+      <div id="screen-actions" class="screen-actions"></div>
+      <p id="screen-note" class="screen-note" hidden></p>
+      <p class="boot-hint">Still on this screen? Paperview has to be opened through a web server (http://localhost or https), not as a file. See the README.</p>
+      <noscript><p class="screen-error">Paperview needs JavaScript.</p></noscript>
+    </div>
+  </main>
+
+  <div id="app" class="app" hidden>
+    <section class="list-panel" aria-label="Search">
+      <div class="search-row">
+        <input id="search" class="search" type="search" aria-label="Search" autocomplete="off" spellcheck="false">
+        <button id="folder-button" class="folder-button" type="button" popovertarget="folder-menu">
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2.75 5.5c0-.83.67-1.5 1.5-1.5h3.4l1.7 1.9h6.4c.83 0 1.5.67 1.5 1.5v7.1c0 .83-.67 1.5-1.5 1.5H4.25c-.83 0-1.5-.67-1.5-1.5z"/>
+          </svg>
+          <span id="folder-name" class="folder-name"></span>
+          <svg class="icon chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="M6 8l4 4 4-4"/></svg>
+        </button>
+        <div id="folder-menu" class="folder-menu" popover>
+          <button type="button" data-action="refresh" autofocus>Refresh data</button>
+          <button type="button" data-action="choose">Choose a different folder</button>
+        </div>
+      </div>
+
+      <div id="results-area" class="results-area">
+        <ol id="results" class="results" aria-label="Results"></ol>
+        <p id="results-empty" class="results-empty" hidden>No matching results</p>
+      </div>
+
+      <footer class="list-footer">
+        <span id="result-count" class="result-count" aria-live="polite"></span>
+        <nav class="pager" aria-label="Result pages">
+          <button id="page-prev" class="button pager-button" type="button">Prev</button>
+          <span id="page-label" class="page-label"></span>
+          <button id="page-next" class="button pager-button" type="button">Next</button>
+        </nav>
+      </footer>
+    </section>
+
+    <section class="doc" aria-label="Document">
+      <div id="doc-bar" class="doc-bar"></div>
+      <div class="viewer">
+        <div id="viewer-frame" class="viewer-frame"></div>
+        <div id="viewer-message" class="viewer-message" hidden></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="notice-region" role="status">
+    <div id="notice" class="notice" hidden>
+      <p id="notice-text" class="notice-text"></p>
+      <button id="notice-close" class="notice-close" type="button">Dismiss</button>
+    </div>
+  </div>
+</body>
+</html>
