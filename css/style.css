@@ -15,7 +15,7 @@
   --bar-height: 56px;      /* search row and document bar line up */
   --radius: 6px;
 
-  font: 15px/1.45 system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font: 15px/1.45 "Arial", system-ui, "Helvetica Neue", Arial, sans-serif;
   color: var(--ink);
   background: var(--paper);
 }
